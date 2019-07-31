@@ -1,5 +1,7 @@
 <?php
-    session_start() ;
+    session_start();
+    $user = $_SESSION['Username'];
+
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +36,7 @@
         }
         .wrap{
             width: 720px;
+            height: 610px;
             margin: 15px auto;
             padding: 15px 10px;
             background: white;
@@ -42,17 +45,38 @@
             -moz-border-radius: 5px;
             border-radius: 5px;
         }
-        .wrap:hover{
-            width: 720px;
+
+        .wrap_title{
+            width: 680px;
+            height: 22px;
+            font-size: 20px;
             margin: 15px auto;
             padding: 15px 10px;
-            background: #f0f0f0;
+            background: white;
             border: 2px solid #DBDBDB;
             -webkit-border-radius: 5px;
             -moz-border-radius: 5px;
-            border-radius: 5px;
-            cursor: pointer;
         }
+
+        .wrap_content{
+            width: 680px;
+            height: 200px;
+            margin: 15px auto;
+            padding: 15px 10px;
+            background: white;
+            border: 2px solid #DBDBDB;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+
+        }
+
+        .input_submit{
+            padding:5px 15px; background:#ccc; border:0 none;
+            cursor:pointer;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+        }
+
         .title, .userName {
             font-weight:700;
         }
@@ -85,44 +109,29 @@
 
 </ul>
 
-<div class="wrap" style="background-color: lightsalmon">
-    <div>
-        <h1 class="title"> Message Boarad </h1>
 
-        <div class="byUser">
-            <span class="title">All post by User : </span>
-            <select id="selUser">
-                <option value=0>All</option>
-            </select>
-            <button type="button" onclick="searchUser()">Search </button>
-        </div>
-    </div>
 
-</div>
-
-<div class="wrap" onclick="location.href='https://www.ifreesite.com/color/'">
-    <div>
-        <h1 class="title">Posts</h1>
-        <p class="test">bbbb</p>
-        <div>
-            <p class="test">cccc</p>
-        </div>
-    </div>
-
-    <p class="reply"> aaaaa</p>
-</div>
-
-<div class="wrap">
-        <div>
-            <h1 class="title">s</h1>
-            <p class="test">bbbb</p>
+<div class="wrap" style="background-color: lemonchiffon" >
+    <div >
+        <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Posts Topic</h1>
+        <h2 style="color: rebeccapurple; text-align: right" >Author: <?php echo $user ?> <hr></h2>
+        <h2 style="color: rebeccapurple; font-size: 25px">Title:
+            <form>
+            <input class="wrap_title" type="text" name="title" placeholder="Topic Here"> <hr></h2>
+        <div >
             <div>
-                <p class="test">cccc</p>
+                <h2 style="color: rebeccapurple; font-size: 20px">Content:</h2>
+                <textarea class="wrap_content" style="font-size: 20px" name="content" placeholder="Content Here"></textarea>
+                <div align="center">
+                    <input class="input_submit" type="submit" value="POST" >
+                </div>
+
+                </form>
             </div>
         </div>
-
-        <p class="reply"> aaaaa</p>
+    </div>
 </div>
+
 
 
 </body>
