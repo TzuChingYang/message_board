@@ -2,6 +2,27 @@
     session_start() ;
 ?>
 
+<!-- Fetch DataBase information Here -->
+<?php
+    /* ========================================= */
+    // Connect to data base
+    // SQL Topic table to get data of Post...
+    /* ========================================= */
+    // Get connection
+    $server ="localhost";
+    $username ="tzching";
+    $password ="00000000";
+    $db_name ="MessageBoard";
+
+    $conn = new mysqli($server,$username,$password,$db_name) ;
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="zh-TW">
