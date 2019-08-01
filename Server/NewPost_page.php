@@ -116,7 +116,7 @@
         <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Posts Topic</h1>
         <h2 style="color: rebeccapurple; text-align: right" >Author: <?php echo $user ?> <hr></h2>
         <h2 style="color: rebeccapurple; font-size: 25px">Title:
-            <form>
+            <form method="post" action="NewPost_response.php">
             <input class="wrap_title" type="text" name="title" placeholder="Topic Here"> <hr></h2>
         <div >
             <div>
