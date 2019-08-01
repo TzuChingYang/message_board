@@ -2,6 +2,7 @@
     session_start() ;
     $order = $_GET['order'] ;
     $_SESSION['order']=$order;
+    unset($_SESSION['posttime']) ;
 ?>
 
 <!-- Fetch DataBase information Here -->
@@ -34,7 +35,7 @@
 
 <head>
 
-    <title>TOPIC</title>
+    <title>Message Board</title>
 
     <style>
         #menu {
@@ -165,8 +166,11 @@ $query = $conn->query($sql) ;
 
 for ($num=0; $num < $query->num_rows ; $num++){
     $row = $query->fetch_assoc();
+    $belongs = $row['Belongs'] ;
+    $posttime =$row['PostTime'] ;
+
     ?>
-<div class="wrap" onclick="location.href='https://www.ifreesite.com/color/'">
+<div class="wrap" onclick='location.href="<?php echo"PostAndReply_page.php?belongs=$belongs&posttime=$posttime";?>"'>
     <div>
         <h1 class="title" style="text-align: center"><?php echo $row['Topic']?> </h1>
         <div>

@@ -1,7 +1,12 @@
 <?php
-    session_start();
-    $user = $_SESSION['Username'];
-    $order = $_SESSION['order'] ;
+session_start();
+$username = $_SESSION['Username'];
+$order = $_SESSION['order'] ;
+
+$topic_belongs = $_SESSION['belongs'];
+$topic_posttime = $_SESSION['posttime'];
+$topic = $_SESSION['topic'] ;
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +41,7 @@
         }
         .wrap{
             width: 720px;
-            height: 610px;
+            height: 500px;
             margin: 15px auto;
             padding: 15px 10px;
             background: white;
@@ -103,7 +108,7 @@
 
 <ul id=menu >
     <?php echo "<li><a href=TopicList_page.php?order=$order style='font-size: 25px;color:red;'><b>MessageBoard</b></a> "?>
-    <li><a href="NewPost_page.php" style="font-size: 25px;color:red;"><b>NewPost</b></a>
+    <li><a href="<?php echo"PostAndReply_page.php?belongs=$topic_belongs&posttime=$topic_posttime";?>" style="font-size: 25px;color:red;"><b>Previous</b></a>
     <li><a href="Login_page.php" style="font-size: 25px;color:red;"><b>Logout</b></a>
 
 </ul>
@@ -112,19 +117,16 @@
 
 <div class="wrap" style="background-color: lemonchiffon" >
     <div >
-        <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Posts Topic</h1>
-        <h2 style="color: rebeccapurple; text-align: right" ><?php echo $user ?> <hr></h2>
-        <h2 style="color: rebeccapurple; font-size: 25px">Title:
-            <form method="post" action="NewPost_response.php" target="_self">
-            <input class="wrap_title" type="text" name="title" placeholder="Topic Here"> <hr></h2>
+        <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Reply: <?php echo $topic;?></h1>
+        <h2 style="color: rebeccapurple; text-align: right" ><?php echo $username ?> <hr></h2>
+        <h2 style="color: rebeccapurple; font-size: 25px">Content:
+            <form method="post" action="Reply_response.php" target="_self">
+                <textarea class="wrap_content" style="font-size: 20px" name="content" placeholder="Content Here"></textarea></h2>
         <div >
             <div>
-                <h2 style="color: rebeccapurple; font-size: 20px">Content:</h2>
-                <textarea class="wrap_content" style="font-size: 20px" name="content" placeholder="Content Here"></textarea>
                 <div align="center">
-                    <input class="input_submit" type="submit" value="POST" >
+                    <input class="input_submit" type="submit" value="REPLY" >
                 </div>
-
                 </form>
             </div>
         </div>
