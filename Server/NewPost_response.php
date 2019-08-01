@@ -1,6 +1,9 @@
 <?php // Basic setting
     session_start() ;
-    // Get Post Data
+    $order = $_SESSION['order'] ;
+
+
+// Get Post Data
     $belongs = $_SESSION['Username'] ;
     $title = $_POST['title'];
     $content =$_POST['content'] ;
@@ -16,14 +19,14 @@
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }else{
-        echo 'Connect and check your post ... <br><br>' ;
+        //echo 'Connect and check your post ... <br><br>' ;
     }
 
     // Check title and title is empty or not
     if(empty($title) || empty($content)){
         if (empty($title)==true && empty($content)==true){
             echo 'Error : your post\'s should not be empty !<br> ';
-            echo '<meta http-equiv=REFRESH CONTENT=3;url=NewPost_page.php>';
+            echo "<meta http-equiv=REFRESH CONTENT=3;url=NewPost_page.php>";
 
         }else if(empty($title)==true){
             echo 'Error : your post\'s title should not be empty !<br> ';
@@ -38,19 +41,17 @@
     }else{
         $sql = "Insert into Topic(Topic,Content,Belongs) values ('$title','$content','$belongs')" ;
         $query = $conn->query($sql) ;
-        
+
         // Check success or not
         if ($query){
-            echo 'Your Article Post successes !! Please see it on the Message Board<br>' ;
-            echo 'Page will return in 3 seconds...<br>' ;
-            echo '<meta http-equiv=REFRESH CONTENT=3;url=TopicList_page.php>';
+            echo "<meta http-equiv=REFRESH CONTENT=0;url=TopicList_page.php?order=$order>";
 
 
         }else{
 
             echo 'Your Article Post fails !! Please try again<br>' ;
-            echo 'Page will return in 3 seconds...<br>' ;
-            echo '<meta http-equiv=REFRESH CONTENT=3;url=NewPost_page.php>';
+            echo 'Page will return in 5 seconds...<br>' ;
+            echo "<meta http-equiv=REFRESH CONTENT=5;url=NewPost_page.php>";
 
         }
     }

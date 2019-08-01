@@ -1,7 +1,7 @@
 <?php
     session_start();
     $user = $_SESSION['Username'];
-
+    $order = $_SESSION['order'] ;
 ?>
 
 <!DOCTYPE html>
@@ -102,9 +102,8 @@
 <body id="body">
 
 <ul id=menu >
-    <li style="color:black"><a href="#L384" style="font-size: 25px;color:red;"><b>Member</b></a>
-    <li><a href="TopicList_page.php" style="font-size: 25px;color:red;"><b>Topic</b></a>
-    <li><a href="NewPost_page.php" style="font-size: 25px;color:red;"><b>Post</b></a>
+    <?php echo "<li><a href=TopicList_page.php?order=$order style='font-size: 25px;color:red;'><b>MessageBoard</b></a> "?>
+    <li><a href="NewPost_page.php" style="font-size: 25px;color:red;"><b>NewPost</b></a>
     <li><a href="Login_page.php" style="font-size: 25px;color:red;"><b>Logout</b></a>
 
 </ul>
@@ -116,7 +115,7 @@
         <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Posts Topic</h1>
         <h2 style="color: rebeccapurple; text-align: right" >Author: <?php echo $user ?> <hr></h2>
         <h2 style="color: rebeccapurple; font-size: 25px">Title:
-            <form method="post" action="NewPost_response.php">
+            <form method="post" action="NewPost_response.php" target="_self">
             <input class="wrap_title" type="text" name="title" placeholder="Topic Here"> <hr></h2>
         <div >
             <div>

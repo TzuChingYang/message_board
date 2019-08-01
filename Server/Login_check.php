@@ -43,11 +43,8 @@ if ($result->num_rows > 0) {
 
         $_SESSION['Username'] = $id;
         $test = $_SESSION['Username'] ;
-        echo 'Login success! <br>';
-        echo 'Welcome: '.$id.'   !!!!!<br>' ;
-        echo 'Page will return to Registration after 5 second...<br>';
 
-        echo '<meta http-equiv=REFRESH CONTENT=5;url=TopicList_page.php>';
+        echo '<meta http-equiv=REFRESH CONTENT=0;url=TopicList_page.php?order=0>';
 
     } else {
 
