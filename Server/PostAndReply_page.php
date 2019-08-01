@@ -191,30 +191,45 @@
 </div>
 
 <!-- Here start to catch reply's data -->
+<?php
+    $sql_select_reply = "Select * from Reply Where Topic='$topic'" ;
+    $query_reply = $conn->query($sql_select_reply);
 
+    for ($num=0;$num < $query_reply->num_rows ; $num++) {
+            $row_reply=$query_reply->fetch_assoc();
 
-<!-- Below is a reply's format -->
-<div class="wrap_reply">
-    <div>
-        <table>
-            <tr>
-                <th width="50%"><img src="img_resource/img_Account.png"></th>
-                <th width="50%"><img src="img_resource/img_time.png" </th>
-                <th><img src="img_resource/img_modify.png"></th>
+            $reply_content = $row_reply['Content'];
+            $reply_belongs = $row_reply['Belongs'];
+            $reply_time = $row_reply['PostTime'];
+        ?>
+        <!-- Below is a reply's format -->
+        <div class="wrap_reply">
+            <div>
+                <table>
+                    <tr>
+                        <th width="50%"><img src="img_resource/img_Account.png"></th>
+                        <th width="50%"><img src="img_resource/img_time.png"</th>
+                        <th><?php
+                            if ($username == $reply_belongs){
+                                echo "<a href='#'><img src='img_resource/img_modify.png'></a>" ;
+                            }?> </th>
 
-            </tr>
+                    </tr>
 
-            <tr>
-                <td><b><?php echo 'name' ?></b></td>
-                <td><b><?php echo  'reply time' ?></b></td>
-            </tr>
-        </table>
-        <hr>
-        <div>
-            <h2 style="word-wrap: break-word">ffdf</h2>
+                    <tr>
+                        <td><b><?php echo $reply_belongs ?></b></td>
+                        <td><b><?php echo substr($reply_time,0,19) ?></b></td>
+                    </tr>
+                </table>
+                <hr>
+                <div>
+                    <h2 style="word-wrap: break-word"><?php echo $reply_content?></h2>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+        <?php
+    }
+?>
 <!-- -->
 
 </body>
