@@ -215,7 +215,7 @@ echo 'belongs: '.$belongs .'<br>' ;
                         <th width="40%"><img src="img_resource/img_time.png"</th>
                         <th width="10%"><?php
                             if ($username == $reply_belongs){
-                                echo "<a href='#'><img src='img_resource/img_modify.png'></a>" ;
+                                echo "<a href='EditReply_page.php'><img src='img_resource/img_modify.png'></a>" ;
                             }?> </th>
 
                     </tr>

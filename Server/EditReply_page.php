@@ -120,12 +120,12 @@ $topic = $_SESSION['topic'] ;
         <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px">Reply: <?php echo $topic;?></h1>
         <h2 style="color: rebeccapurple; text-align: right" ><?php echo $username ?> <hr></h2>
         <h2 style="color: rebeccapurple; font-size: 25px">Content:
-            <form method="post" action="Reply_response.php" target="_self">
-                <textarea class="wrap_content" style="font-size: 20px" name="content" placeholder="Content Here"></textarea></h2>
+            <form method="post" action="EditReply_response.php" target="_self">
+                <textarea class="wrap_content" style="font-size: 20px" name="content" placeholder="Edit content here..."></textarea></h2>
         <div >
             <div>
                 <div align="center">
-                    <input class="input_submit" type="submit" value="REPLY" >
+                    <input class="input_submit" type="submit" value="Edit" >
                 </div>
                 </form>
             </div>

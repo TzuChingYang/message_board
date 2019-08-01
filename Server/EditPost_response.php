@@ -49,6 +49,9 @@ if(empty($title) || empty($content)){
 
     // Check success or not
     if ($query){
+        $sql_reply_topic = "Update Reply set Topic='$title' Where Topic='$old_title'" ;
+        $query =$conn->query($sql_reply_topic) ;
+
         echo "<meta http-equiv=REFRESH CONTENT=0;url=TopicList_page.php?order=$order>";
 
 
