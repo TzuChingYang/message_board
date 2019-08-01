@@ -4,6 +4,7 @@
     $username = $_SESSION['Username'] ;
     $belongs =$_GET['belongs'] ;
 
+
     if(empty($_SESSION['posttime'])){
         $posttime=$_GET['posttime'];
         $_SESSION['posttime']=$posttime;
@@ -39,10 +40,13 @@
     $row =$query->fetch_assoc() ;
 
     $topic = $row['Topic'];
+    $content =$row['Content'] ;
 
     $_SESSION['topic']=$topic ;
-    $content =$row['Content'] ;
-    echo 'belongs: '.$belongs .'<br>' ;
+    $_SESSION['content']=$content ;
+
+
+echo 'belongs: '.$belongs .'<br>' ;
     echo 'posttime: '.$posttime .'<br> <hr>' ;
     echo 'topic: '.$topic.'<br>' ;
     echo 'content: '.$content.'<br>' ;
@@ -173,7 +177,7 @@
         <h1 class="title" style="color: rebeccapurple; text-align: center ; font-size: 30px;word-wrap: break-word"><?php echo $topic ; ?>
             <?php
             if ($username == $belongs) {
-                echo '<a href="#"><img src="img_resource/img_modify.png"></h1> </a>';
+                echo '<a href="EditPost_page.php"><img src="img_resource/img_modify.png"></h1> </a>';
             }
             ?>
 
@@ -208,8 +212,8 @@
                 <table>
                     <tr>
                         <th width="50%"><img src="img_resource/img_Account.png"></th>
-                        <th width="50%"><img src="img_resource/img_time.png"</th>
-                        <th><?php
+                        <th width="40%"><img src="img_resource/img_time.png"</th>
+                        <th width="10%"><?php
                             if ($username == $reply_belongs){
                                 echo "<a href='#'><img src='img_resource/img_modify.png'></a>" ;
                             }?> </th>
