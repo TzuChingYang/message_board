@@ -131,11 +131,11 @@
 
 <div class="wrap" style="background-color: lightsalmon">
     <div>
-        <h1 class="title"> Message Boarad </h1>
+        <h1 class="title"> Message Board </h1>
 
         <div class="byUser">
             <span class="title">Post order : </span>
-            <form method='get' action="Oder_response.php">
+            <form method='get' action="Order_response.php">
                 <?php
                     if ($order ==0){ //New
                         echo "<input type='radio' name='order' value='0' checked><b>New</b>" ;

@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="db86e91c-6aaa-440f-8e92-b6b6200c7b51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/PostAndReply_page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Reply_page.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/Reply_response.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/NewPost_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Server/NewPost_page.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/TopicList_page.php" beforeDir="false" afterPath="$PROJECT_DIR$/Server/TopicList_page.php" afterDir="false" />
-    </list>
+    <list default="true" id="db86e91c-6aaa-440f-8e92-b6b6200c7b51" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +74,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Server/Reply_response.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
+            <state relative-caret-position="564">
               <caret line="47" column="49" lean-forward="true" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
             </state>
           </provider>
@@ -203,12 +196,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1564567179199</updated>
-      <workItem from="1564567180545" duration="34864000" />
+      <workItem from="1564567180545" duration="34998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34864000" />
+    <option name="totallyTimeSpent" value="34998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="97" y="23" width="1343" height="828" extended-state="0" />
@@ -301,13 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Server/NewPost_response.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-256">
-          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Server/Login_page.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-918">
@@ -349,9 +335,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Server/NewPost_response.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-256">
+          <caret line="19" column="58" lean-forward="true" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Server/Reply_response.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
+        <state relative-caret-position="564">
           <caret line="47" column="49" lean-forward="true" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
         </state>
       </provider>
